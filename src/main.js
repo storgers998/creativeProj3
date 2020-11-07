@@ -1,8 +1,25 @@
 import Vue from 'vue'
 import App from './App.vue'
+import mock from './mock-data.js'
+import oldMock from '../starter-code/mock-data.js'
+import diffMock from './diffmock-data.js'
+import router from './router'
 
-Vue.config.productionTip = false
+let data = {
+
+  products: oldMock,
+  cart: [],
+  coronavirus: mock.coronavirus,
+  churchjokes: mock.churchjokes,
+  puns: mock.puns,
+  otherjokes: [],
+  currId: 0,
+  addedJoke: '',
+  alljokes:diffMock
+}
 
 new Vue({
-  render: h => h(App),
+  router,
+  data,
+  render: h => h(App)
 }).$mount('#app')
